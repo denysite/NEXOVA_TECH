@@ -1,17 +1,22 @@
 @use "sass:math";
+@use "sass:string";
 
 // FUNCTIONS
 
 @function rem($px) {
-    @return math.div($px, 16)+rem;
+    @return math.div($px, 16) * 1rem;
 }
 
 @function em($px, $current: 16) {
-    @return math.div($px, $current)+em;
+    @return math.div($px, $current) * 1em;
 }
 
 @function percent($px, $from) {
     @return math.div($px, $from) * 100%;
+}
+
+@function clampScss($min, $preferred, $max) {
+    @return string.unquote("clamp(#{$min}, #{$preferred}, #{$max})");
 }
 
 // VARS
@@ -31,6 +36,8 @@ $containerWidth: $maxWidthContainer + 30;
     --containerWidth: #{$containerWidth}px;
 
     --mainColor: #000;
+    --highlightColor: #1090CB;
+    --blueHover: #0e82b7;
 }
 
 // MIXINS
@@ -62,7 +69,7 @@ $containerWidth: $maxWidthContainer + 30;
     }
 }
 
-@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 0) {
+@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 1) {
     @if ($startSize==0) {
         $startSize: 0.000001;
     }

@@ -1,0 +1,48 @@
+@use './vars' as *;
+
+.title-mark {
+    color: var(--highlightColor);
+}
+
+.blue-button {
+    color: #fff;
+    background-color: var(--highlightColor);
+    border-radius: 10px;
+    max-width: rem(193);
+    padding: clampScss(5px, rem(10), 15px) 27px;
+    text-align: center;
+
+    transition: all .4s ease;
+
+    @media(max-width: 470px) {
+        padding: clampScss(5px, rem(10), 15px) 10px;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            box-shadow: var(--highlightColor) 0 rem(5) rem(20);
+        }
+    }
+}
+
+.white-button {
+    color: var(--highlightColor);
+    background-color: #fff;
+    border-radius: rem(10);
+    border: rem(1) solid var(--highlightColor);
+    max-width: rem(193);
+
+    transition: all .4s ease;
+
+    padding: rem(9) 0;
+    @include adaptiveValue("padding-left", 18, 10);
+    @include adaptiveValue("padding-right", 18, 10);
+
+    @media (hover: hover) {
+        &:hover {
+            color: #fff;
+            background-color: var(--highlightColor);
+            box-shadow: var(--highlightColor) 0 rem(5) rem(20);
+        }
+    }
+}

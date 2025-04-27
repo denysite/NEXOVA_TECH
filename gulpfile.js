@@ -19,9 +19,9 @@ import { images } from "./gulp/tasks/images.js";
 import { ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
 
 function watcher() {
-    gulp.watch(path.watch.html, html);
-    gulp.watch(path.watch.scss, scss);
-    gulp.watch(path.watch.js, js);
+    gulp.watch(path.watch.html, html).on('change', app.plugins.browserSync.reload);
+    gulp.watch(path.watch.scss, scss).on('change', app.plugins.browserSync.reload);
+    gulp.watch(path.watch.js, js).on('change', app.plugins.browserSync.reload);
     gulp.watch(path.watch.images, images);
 }
 

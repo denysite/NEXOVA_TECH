@@ -2,3 +2,97 @@
 @use './base/abstract' as *;
 
 /* SCRIPT */
+
+.hero {
+    background-color: #1090cb10;
+    padding-bottom: rem(97);
+
+    @include adaptiveValue("padding-top", 100, 0);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        gap: rem(15);
+    }
+
+    &__content {
+        max-width: rem(630);
+        flex: 0 1 auto;
+        margin-top: 35px;
+
+        @media(max-width: em(830)) {
+            text-align: center;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+
+        font-size: clampScss(22.5px, 2.5rem, 50px);
+
+        @media(max-width: 470px) {
+            font-size: clampScss(22.5px, 2rem, 42px);
+        }
+    }
+
+    &__text {
+        margin-top: rem(16);
+        color: #5C5C5C;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: rem(15);
+
+        @include adaptiveValue("margin-top", 72, 20);
+
+        @media(max-width: em(830)) {
+            justify-content: center;
+        }
+    }
+
+    &__button {}
+
+    &__img {
+        position: relative;
+        max-width: rem(538);
+        width: 100%;
+        margin-inline: auto;
+
+        @media(max-width: em(630)) {
+            display: none;
+        }
+
+        &-man {
+            margin-top: rem(90);
+            max-width: rem(416);
+            width: 100%;
+        }
+
+        &-plant, &-cuboid, &-succlent {
+            position: absolute;
+        }
+
+        &-cuboid {
+            top: 0;
+            right: 0;
+            max-width: 13%;
+        }
+
+        &-plant {
+            right: 8%;
+            bottom: 5%;
+            max-width: 10%;
+
+            @media(max-width: em(830)) {
+                display: none;
+            }
+        }
+
+        &-succlent {
+            top: 18%;
+            left: 15%;
+            max-width: 7%;
+        }
+    }
+}

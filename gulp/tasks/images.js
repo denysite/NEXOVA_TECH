@@ -1,8 +1,8 @@
 import webp from "gulp-webp"
-import imagemin, { gifsicle, mozjpeg, optipng, svgo } from 'gulp-imagemin';
+import imagemin from 'gulp-imagemin';
 
-export const images = () => {
-  return app.gulp.src(app.path.src.images)
+export const images = async () => {
+  return app.gulp.src(app.path.src.images, { encoding: false })
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
         title: "IMAGES",
@@ -19,7 +19,7 @@ export const images = () => {
       app.gulp.dest(app.path.build.images)))
 
     .pipe(app.plugins.gulpIf(
-      app.isBuild, app.gulp.src(app.path.src.images)))
+      app.isBuild, app.gulp.src(app.path.src.images, { encoding: false })))
     .pipe(app.plugins.gulpIf(
       app.isBuild, app.plugins.newer(app.path.build.images)))
 
@@ -32,7 +32,7 @@ export const images = () => {
       })))
     .pipe(app.gulp.dest(app.path.build.images))
 
-    .pipe(app.gulp.src(app.path.src.svg))
+    .pipe(app.gulp.src(app.path.src.svg, { encoding: false }))
     .pipe(app.gulp.dest(app.path.build.images))
     .pipe(app.plugins.browserSync.stream())
 }
