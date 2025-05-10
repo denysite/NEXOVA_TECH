@@ -597,8 +597,7 @@
 
     position: relative;
 
-    &::before {
-        content: "";
+    &__star {
         position: absolute;
         max-width: minScss(rem(49), 110px);
         width: 100%;
@@ -607,10 +606,9 @@
         left: 12vw;
         transform: translateY(-50%) rotate(-25deg);
 
-        background-image: url('@img/email/star.png');
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
+        img {
+            max-width: 100%;
+        }
 
         @media(max-width: 470px) {
             max-width: minScss(rem(49), 65px);
@@ -624,8 +622,7 @@
 
         position: relative;
 
-        &::after {
-            content: "";
+        &-pai {
             position: absolute;
             max-width: minScss(rem(38), 90px);
             width: 100%;
@@ -633,10 +630,10 @@
             top: 0;
             right: 6%;
             transform: translateY(-100%);
-            background-image: url('@img/email/pai.png');
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
+
+            img {
+                max-width: 100%;
+            }
 
             @media(max-width: 470px) {
                 max-width: minScss(rem(38), 60px);

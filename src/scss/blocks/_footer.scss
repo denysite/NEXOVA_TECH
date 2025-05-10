@@ -61,20 +61,14 @@
     &__info {
         max-width: rem(372);
 
-        &-logo {
-            font-size: minScss(rem(16), 60px);
-            color: #00329B;
-            font-weight: 700;
-
-            @media(max-width: 470px) {
-                font-size: minScss(rem(16), 40px);
+        .logo {
+            @media(max-width: em(610)) {
+                margin-inline: auto;
             }
         }
 
         &-text {
             margin-top: 27px;
-
-
         }
     }
 

@@ -55,7 +55,7 @@
     &::after {
         content: "";
         position: absolute;
-        width: 35vw;
+        width: minScss(35vw, 500px);
         aspect-ratio: 1 / 1;
         border-radius: 50%;
         z-index: -1;

@@ -20,11 +20,14 @@ let rightHeroDecorEndPath = "M10.7281 344.647C34.6067 302.728 -16.0002 224 39.69
 
 // ============== all widths ==============
 
-gsap.from('.logo', {
+gsap.fromTo('.header-logo', {
     opacity: animOpacity,
     x: -animX,
     delay: animDelay,
-    duration: startAnimDuration
+}, {
+    duration: startAnimDuration,
+    x: 0,
+    opacity: 1
 });
 
 tl.from('.hero__title', {
@@ -62,20 +65,6 @@ gsap.from('.hero__decor--left svg path', {
     }
 });
 
-gsap.from('.services__list-item', {
-    x: -animX,
-    opacity: animOpacity,
-    delay: animDelay,
-    stagger: {
-        each: animStagger,
-        from: "end"
-    },
-    scrollTrigger: {
-        trigger: '.services__list',
-        start: "top bottom"
-    },
-})
-
 gsap.from('.road__title', {
     y: animY,
     opacity: animOpacity,
@@ -97,6 +86,78 @@ gsap.from('.road__subtitle', {
         start: `bottom-=${animY}px bottom`,
     },
 })
+
+gsap.from('.partners__title', {
+    y: animY,
+    opacity: animOpacity,
+    duration: scrollAnimDuration,
+
+    scrollTrigger: {
+        trigger: '.partners__container',
+        start: `top bottom`,
+    }
+});
+
+let emailDecor = ['.email__star', '.email__wrapper-pai'];
+gsap.from(emailDecor, {
+    scale: 0,
+    duration: scrollAnimDuration,
+    delay: animDelay,
+
+    scrollTrigger: {
+        trigger: '.email__wrapper',
+        start: 'top bottom'
+    }
+});
+
+gsap.from('.email__title', {
+    y: animY,
+    opacity: animOpacity,
+    delay: animDelay,
+    duration: scrollAnimDuration,
+
+    scrollTrigger: {
+        trigger: '.email__wrapper',
+        start: 'top bottom'
+    }
+});
+
+let emailFormItems = ['.email__wrapper input', '.email__wrapper button'];
+
+// ============== min-width: em(1200) ==============
+
+mm.add("(min-width: 75em)", () => {
+    gsap.from('.services__list-item', {
+        x: -animX,
+        opacity: animOpacity,
+        delay: animDelay,
+        stagger: {
+            each: animStagger,
+            from: "end"
+        },
+        scrollTrigger: {
+            trigger: '.services__list',
+            start: "top bottom"
+        },
+    })
+});
+
+// ============== max-width: em(1200) ==============
+
+mm.add("(max-width: 75em)", () => {
+    gsap.from('.services__list-item', {
+        y: animY,
+        opacity: animOpacity,
+        delay: animDelay,
+        stagger: {
+            each: animStagger,
+        },
+        scrollTrigger: {
+            trigger: '.services__list',
+            start: "top bottom"
+        },
+    });
+});
 
 // ============== min-width: em(1000) ==============
 
@@ -176,7 +237,7 @@ mm.add("(min-width: 50em)", () => {
             gsap.from(itemContent, {
                 x: -animX,
                 opacity: animOpacity,
-                delay: i * animStagger * 2,
+                delay: i * animStagger * 1.5,
 
                 scrollTrigger: {
                     trigger: roadItem,
@@ -211,7 +272,7 @@ mm.add("(min-width: 50em)", () => {
             gsap.from(itemContent, {
                 x: animX,
                 opacity: animOpacity,
-                delay: i * animStagger,
+                delay: i * animStagger * 1.5,
 
                 scrollTrigger: {
                     trigger: roadItem,
@@ -244,16 +305,77 @@ mm.add("(min-width: 50em)", () => {
             start: '5% bottom'
         }
     });
+
+    gsap.from('.partners__block img', {
+        x: -animX,
+        opacity: animOpacity,
+        delay: animDelay * 2,
+        stagger: {
+            each: animStagger * 1.5,
+            from: "end"
+        },
+
+        scrollTrigger: {
+            trigger: '.partners__block',
+            start: 'top bottom'
+        }
+    });
 });
 
 // ============== max-width: em(800) ==============
 
 mm.add("(max-width: 50em)", () => {
     gsap.from('.hero__decor--right svg path', {
-        x: animX,
+        y: animX,
         opacity: animOpacity,
         duration: startAnimDuration,
         delay: animDelay
+    });
+
+    gsap.utils.toArray('.road__item').forEach(item => {
+        let itemContent = [
+            item.querySelector('.road__item-subtitle'),
+            item.querySelector('.road__item-title'),
+            item.querySelector('.road__item-text')
+        ];
+
+        gsap.from(itemContent, {
+            y: animY,
+            opacity: animOpacity,
+            stagger: animStagger,
+            delay: animDelay,
+
+            scrollTrigger: {
+                trigger: item,
+                start: '5% bottom'
+            }
+        });
+    });
+
+    gsap.utils.toArray('.subscribe__item').forEach(item => {
+        gsap.from(item, {
+            y: animY,
+            opacity: animOpacity,
+            delay: animDelay,
+            duration: scrollAnimDuration,
+
+            scrollTrigger: {
+                trigger: item,
+                start: '5% bottom'
+            }
+        });
+    });
+
+    gsap.from('.partners__block img', {
+        y: animY,
+        opacity: animOpacity,
+        delay: animDelay * 2,
+        stagger: animStagger * 1.5,
+
+        scrollTrigger: {
+            trigger: '.partners__block',
+            start: 'top bottom'
+        }
     });
 });
 
@@ -276,6 +398,79 @@ mm.add("(min-width: 38.125em)", () => {
         x: animX,
         stagger: animStagger,
         delay: animDelay
-    });
+    })
+
+    let footerItems = [
+        '.footer-logo a',
+        '.footer__info-text',
+        '.footer-spoller',
+        '.footer__socials-item'
+    ];
+    gsap.from(footerItems, {
+        opacity: animOpacity,
+        x: -animX,
+        delay: animDelay,
+        stagger: animStagger,
+
+        scrollTrigger: {
+            trigger: '.footer__info',
+            start: 'top bottom'
+        }
+    })
 });
 
+// ============== max-width: em(610) ==============
+
+mm.add("(max-width: 38.125em)", () => {
+    let footerItems = [
+        '.footer-logo a',
+        '.footer__info-text',
+        '.footer__links .footer__links-title',
+        '.footer__contact-title',
+        '.footer__socials-item'
+    ];
+
+    gsap.from(footerItems, {
+        opacity: animOpacity,
+        y: animY,
+        delay: animDelay,
+        stagger: animStagger,
+
+        scrollTrigger: {
+            trigger: '.footer__info',
+            start: 'top bottom'
+        }
+    })
+});
+
+// ============== min-width: em(470) ==============
+
+mm.add("(min-width: 29.375em)", () => {
+    gsap.from(emailFormItems, {
+        x: animX,
+        opacity: animOpacity,
+        delay: animDelay,
+        stagger: animStagger,
+
+        scrollTrigger: {
+            trigger: '.email__wrapper form',
+            start: 'top bottom',
+        }
+    })
+});
+
+// ============== max-width: em(470) ==============
+
+mm.add("(max-width: 29.375em)", () => {
+    gsap.from(emailFormItems, {
+        y: animY,
+        opacity: animOpacity,
+        delay: animDelay,
+        stagger: animStagger,
+
+        scrollTrigger: {
+            trigger: '.email__wrapper form',
+            start: 'top bottom',
+        }
+    })
+});

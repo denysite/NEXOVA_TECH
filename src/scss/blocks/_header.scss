@@ -15,10 +15,9 @@
     }
 
     @media (hover: hover) {
+        transition: all .3s ease;
         &:hover {
-            animation-name: hover-logo;
-            animation-duration: 1.5s;
-            animation-timing-function: ease;
+            color: #00329b;
         }
     }
 }
@@ -77,24 +76,6 @@
                 }
             }
         }
-    }
-}
-
-@keyframes hover-logo {
-    0% {
-        transform: rotate(0);
-    }
-
-    33% {
-        transform: rotate(20deg);
-    }
-
-    66% {
-        transform: rotate(-20deg);
-    }
-
-    100% {
-        transform: rotate(0);
     }
 }
 
