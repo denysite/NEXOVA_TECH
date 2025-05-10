@@ -9,21 +9,29 @@
 </head>
 
 <body>
-
     <div class="wrapper">
         @@include('./blocks/header.html')
 
 
         <main class="main">
 
-           <section class="hero">
+            <section class="hero">
                 <div class="circle">
-                    <img class="hero__decor--left" src="@img/hero/left-decor.svg" alt="">
+                    <div class="hero__decor--left">
+                        <svg width="55" height="610" viewBox="0 0 55 610" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M-501.572 83.7334C-477.315 35.6129 -445.451 -1.33172 -391.591 0.39453C-327.164 2.45999 -286.937 128.037 -286.937 128.037C-286.906 128.138 -260.703 211.721 -219.359 243.749C-179.388 274.713 -112.879 282.312 -112.879 282.312C-112.642 282.347 29.8443 302.914 50.4221 374.546C76.4386 465.112 -27.8034 528.123 -93.8054 561.844C-159.807 595.565 -190.503 602.944 -247.5 607.019C-325.59 612.601 -346.509 610.991 -426.365 554.562C-479.047 517.336 -531.868 455.209 -546.418 365.852C-560.967 276.494 -545.832 171.537 -501.572 83.7334Z"
+                                fill="#08D3BB" />
+                        </svg>
+                    </div>
                     <div class="hero__container container">
                         <div class="hero__content">
-                            <h1 class="hero__title">Experienced <span class="title-mark">mobile and web</span> applications
+                            <h1 class="hero__title">Experienced <span class="title-mark">mobile and web</span>
+                                applications
                                 and website builders.</h1>
-                            <p class="hero__text">NEXOVA TECH is a team of experienced mobile and web developers delivering
+                            <p class="hero__text">NEXOVA TECH is a team of experienced mobile and web developers
+                                delivering
                                 powerful, scalable, and design-driven solutions. We build custom websites, enterprise
                                 platforms, and native mobile apps for iOS and Android.</p>
                             <div class="hero__buttons">
@@ -40,6 +48,15 @@
                             <img src="@img/hero/cuboid.png" alt="" class="hero__img-cuboid hero__img-decor">
                             <img src="@img/hero/succlent.png" alt="" class="hero__img-succlent hero__img-decor">
                         </div>
+                    </div>
+                    <div class="hero__decor--right">
+                        <svg width="47" height="531" viewBox="0 0 47 531" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.7283 186.353C40.6069 228.272 19.7551 282.23 45.6957 347.368C53.0404 365.811 56.5381 376.626 66.8342 393.597C116.83 476.003 189.595 521.937 285.656 529.148C352.27 534.148 431.191 533.543 460.244 467.249C489.603 400.257 473.972 315.214 423.839 241.2C368.644 159.713 320.481 102.416 231.244 45.3169C183.487 14.7592 88.0571 -27.7495 33.1692 24.9451C-8.61798 65.0625 -7.15036 144.434 16.7283 186.353Z"
+                                fill="#1090CB" />
+                        </svg>
+
                     </div>
                 </div>
             </section>
@@ -113,7 +130,7 @@
                                 <div class="container road__item-wrapper">
                                     <div class="road__item-content">
                                         <div class="road__item-subtitle">
-                                            <img id="point1" src="@img/road/subtitle-img.svg" alt="">
+                                            <img id="line-point" src="@img/road/subtitle-img.svg" alt="">
                                             <p>Mobile-first design</p>
                                         </div>
                                         <h3 class="road__item-title">We craft seamless <span class="title-mark">mobile
@@ -132,7 +149,7 @@
                                 <div class="container road__item-wrapper">
                                     <div class="road__item-content">
                                         <div class="road__item-subtitle">
-                                            <img id="point2" src="@img/road/subtitle-img.svg" alt="">
+                                            <img id="line-point" src="@img/road/subtitle-img.svg" alt="">
                                             <p>Smart & scalable platforms</p>
                                         </div>
                                         <h3 class="road__item-title"><span class="title-mark">Modern web
@@ -151,7 +168,7 @@
                                 <div class="container road__item-wrapper">
                                     <div class="road__item-content">
                                         <div class="road__item-subtitle">
-                                            <img id="point3" src="@img/road/subtitle-img.svg" alt="">
+                                            <img id="line-point" src="@img/road/subtitle-img.svg" alt="">
                                             <p>Immersive innovation</p>
                                         </div>
                                         <h3 class="road__item-title"><span class="title-mark">AR/VR solutions</span> for
@@ -176,15 +193,17 @@
                     <div class="subscribe__item">
                         <h5 class="subscribe__item-title">Have a question or project in mind?</h5>
 
-                        <p class="subscribe__item-text">Let’s talk! Our team is ready to explore how we can support your next digital idea — whether it’s a quick MVP or a full-scale app.</p>
+                        <p class="subscribe__item-text">Let’s talk! Our team is ready to explore how we can support your
+                            next digital idea — whether it’s a quick MVP or a full-scale app.</p>
 
-                        <a class="subscribe__item-btn blue-button" href="#" >Contact Us</a>
+                        <a class="subscribe__item-btn blue-button" href="#">Contact Us</a>
                     </div>
 
                     <div class="subscribe__item">
                         <h5 class="subscribe__item-title">Stay in the loop with our latest updates</h5>
 
-                        <p class="subscribe__item-text">Get product announcements, tech insights, and industry trends delivered straight to your inbox. No spam — just value.</p>
+                        <p class="subscribe__item-text">Get product announcements, tech insights, and industry trends
+                            delivered straight to your inbox. No spam — just value.</p>
 
                         <a class="subscribe__item-btn white-button" href="#">Subscribe</a>
                     </div>
@@ -207,7 +226,8 @@
             <section class="email">
                 <div class="container">
                     <div class="email__wrapper">
-                        <h2 class="email__title">Have an idea? Let’s talk.Leave your email and we’ll reach out within 24 hours</h2>
+                        <h2 class="email__title">Have an idea? Let’s talk.Leave your email and we’ll reach out within 24
+                            hours</h2>
                         <form action="#">
                             <input type="email" placeholder="Enter your email">
                             <button type="submit">subscribe</button>

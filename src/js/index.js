@@ -6,37 +6,48 @@ import * as func from "./modules/functions.js"
 func.isWebp();
 
 function updateLine() {
-    const points = [
-        document.getElementById('point1'),
-        document.getElementById('point2'),
-        document.getElementById('point3')
-    ];
+  let points = Array.from(document.querySelectorAll('#line-point'));
 
-    const path = document.querySelector('#connecting-line path');
+  if (points.length > 1) {
+    let path = document.querySelector('#connecting-line path');
 
-    const rect1 = points[0].getBoundingClientRect();
-    const rect2 = points[1].getBoundingClientRect();
-    const rect3 = points[2].getBoundingClientRect();
+    let rects = [];
+    points.forEach(point => {
+      rects.push(point.getBoundingClientRect());
+    });
 
-    const startX = rect1.left + rect1.width / 2 + window.scrollX;
-    const startY = rect1.top + rect1.height / 2 + window.scrollY;
+    let positionsX = [];
+    for (let i = 0; i < rects.length; i++) {
+      positionsX.push(rects[i].left + rects[i].width / 2 + window.scrollX);
+    }
 
-    const midX1 = rect2.left + rect2.width / 2 + window.scrollX;
-    const midY1 = rect2.top + rect2.height / 2 + window.scrollY;
+    let positionsY = [];
+    for (let i = 0; i < rects.length; i++) {
+      positionsY.push(rects[i].top + rects[i].height / 2 + window.scrollY);
+    }
 
-    const midX2 = rect3.left + rect3.width / 2 + window.scrollX;
-    const midY2 = rect3.top + rect3.height / 2 + window.scrollY;
+    let offsetX = 300;
+    let offsetY = 1400;
 
-    const offsetX = 300;
-    const offsetY = 1400;
+    let pathM = `${positionsX[0]} ${positionsY[0]}`;
 
-    const d = `
-      M ${startX} ${startY}
-      C ${startX - offsetX} ${startY + offsetY / 2}, ${midX1 - offsetX} ${midY1 - offsetY / 2}, ${midX1} ${midY1}
-      S ${midX2 + offsetX} ${midY2 - offsetY / 2}, ${midX2} ${midY2}
+    let pathC = `${positionsX[0] - offsetX} ${positionsY[0] + offsetY / 2}, ${positionsX[1] - offsetX} ${positionsY[1] - offsetY / 2}, ${positionsX[1]} ${positionsY[1]}`;
+
+    let pathS = ``;
+    if (points.length > 2) {
+      for (let i = 2; i < rects.length; i++) {
+        pathS += `S ${positionsX[i] + offsetX} ${positionsY[i] - offsetY / 2}, ${positionsX[i]} ${positionsY[i]}\n`;
+      }
+    }
+
+    let d = `
+      M ${pathM}
+      C ${pathC}
+      ${pathS}
     `;
 
     path.setAttribute('d', d);
+  }
 }
 
 window.addEventListener('DOMContentLoaded', (e) => {

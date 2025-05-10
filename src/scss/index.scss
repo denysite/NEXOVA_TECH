@@ -4,7 +4,7 @@
 /* SCRIPT */
 
 .hero {
-    background-color: var(--highlightColor)10;
+    background-color: #1090CB10;
 
     position: relative;
 
@@ -19,17 +19,14 @@
         }
     }
 
-    &::after {
-        content: "";
-        background-image: url('@img/hero/right-decor.svg');
-        background-repeat: no-repeat;
+    &__decor--right{
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         right: 0;
         min-height: 371px;
         height: 71%;
-        width: 3%;
+        max-width: 3%;
         z-index: -1;
     }
 
@@ -592,11 +589,11 @@
 }
 
 .email {
-    margin-top: 10vw;
+    margin-top: minScss(10vw, 148px);
 
     background-color: #E8F4FA;
-    padding-top: 10vw;
-    padding-bottom: 7vw;
+    padding-top: minScss(10vw, 148px);
+    padding-bottom: minScss(7vw, 100px);
 
     position: relative;
 
@@ -660,7 +657,7 @@
     }
 
     form {
-        margin-top: 6vw;
+        margin-top: minScss(6vw, 80px);
 
         display: flex;
         gap: 1vw;
