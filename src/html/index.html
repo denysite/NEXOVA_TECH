@@ -3,7 +3,7 @@
 
 <head>
     @@include('./blocks/head.html', {
-    "title": "Home page",
+    "title": "NEXOVA TECH",
     "link": "index"
     })
 </head>
@@ -16,30 +16,207 @@
 
         <main class="main">
 
-            <section class="hero">
-                <div class="hero__container container">
-                    <div class="hero__content">
-                        <h1 class="hero__title">Experienced <span class="title-mark">mobile and web</span> applications and website builders.</h1>
+           <section class="hero">
+                <div class="circle">
+                    <img class="hero__decor--left" src="@img/hero/left-decor.svg" alt="">
+                    <div class="hero__container container">
+                        <div class="hero__content">
+                            <h1 class="hero__title">Experienced <span class="title-mark">mobile and web</span> applications
+                                and website builders.</h1>
+                            <p class="hero__text">NEXOVA TECH is a team of experienced mobile and web developers delivering
+                                powerful, scalable, and design-driven solutions. We build custom websites, enterprise
+                                platforms, and native mobile apps for iOS and Android.</p>
+                            <div class="hero__buttons">
+                                <a class="hero__button blue-button" href="#">Contact us</a>
+                                <a class="hero__button white-button" href="#">View more</a>
+                            </div>
+                        </div>
+                        <div class="hero__img">
+                            <div class="hero__img-man">
+                                <img src="@img/hero/man.png" alt="man">
+                                <img class="hero__img-plant hero__img-decor" src="@img/hero/plant.png" alt="">
+                            </div>
 
-                        <p class="hero__text">NEXOVA TECH is a team of experienced mobile and web developers delivering powerful, scalable, and design-driven solutions. We build custom websites, enterprise platforms, and native mobile apps for iOS and Android.</p>
-
-                        <div class="hero__buttons">
-                            <button class="hero__button blue-button">Contact us</button>
-                            <button class="hero__button white-button">View more</button>
+                            <img src="@img/hero/cuboid.png" alt="" class="hero__img-cuboid hero__img-decor">
+                            <img src="@img/hero/succlent.png" alt="" class="hero__img-succlent hero__img-decor">
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    <div class="hero__img">
-                        <img class="hero__img-man" src="@img/hero/man.png" alt="man">
-                        <img src="@img/hero/cuboid.png" alt="" class="hero__img-cuboid">
-                        <img src="@img/hero/plant.png" alt="" class="hero__img-plant">
-                        <img src="@img/hero/succlent.png" alt="" class="hero__img-succlent">
+            <section class="services">
+                <div class="services__container container">
+                    <ul class="services__list">
+                        <li class="services__list-item services__item">
+                            <div class="services__item-img">
+                                <img src="@img/sevices/web.svg" alt="">
+                            </div>
+
+                            <div class="services__item-inner">
+                                <h6 class="services__item-title">Web Application</h6>
+                                <p class="services__item-text">Custom web platforms tailored to your business needs.</p>
+                            </div>
+                        </li>
+                        <li class="services__list-item services__item">
+                            <div class="services__item-img">
+                                <img src="@img/sevices/seo.svg" alt="">
+                            </div>
+
+                            <div class="services__item-inner">
+                                <h6 class="services__item-title">SEO</h6>
+                                <p class="services__item-text">Improve your website’s visibility and organic reach.</p>
+                            </div>
+                        </li>
+                        <li class="services__list-item services__item">
+                            <div class="services__item-img">
+                                <img src="@img/sevices/vr.svg" alt="">
+                            </div>
+
+                            <div class="services__item-inner">
+                                <h6 class="services__item-title">AR/VR Solutions</h6>
+                                <p class="services__item-text">Immersive experiences for education, marketing, and more.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="services__list-item services__item">
+                            <div class="services__item-img">
+                                <img src="@img/sevices/mobile.svg" alt="">
+                            </div>
+
+                            <div class="services__item-inner">
+                                <h6 class="services__item-title">Mobile Applications</h6>
+                                <p class="services__item-text">Fast, secure, and reliable apps for Android & iOS.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="road">
+                <div class="road__container">
+                    <div class="container">
+                        <h2 class="road__title">User-friendly and modern design</h2>
+                        <p class="road__subtitle">Our designs help users navigate effortlessly, increasing engagement
+                            and conversion.</p>
+                    </div>
+
+                    <div class="road__wrapper">
+                        <svg id="connecting-line" width="100%" height="100%"
+                            style="position: absolute; top: 0; left: 0; pointer-events: none; z-index: 0;">
+                            <path d="" stroke="#999999" stroke-width="2" stroke-dasharray="7 7" fill="none" />
+                        </svg>
+
+
+
+                        <div class="road__block">
+                            <div class="road__item">
+                                <div class="container road__item-wrapper">
+                                    <div class="road__item-content">
+                                        <div class="road__item-subtitle">
+                                            <img id="point1" src="@img/road/subtitle-img.svg" alt="">
+                                            <p>Mobile-first design</p>
+                                        </div>
+                                        <h3 class="road__item-title">We craft seamless <span class="title-mark">mobile
+                                                experiences</span></h3>
+                                        <p class="road__item-text">At NEXOVA TECH, we specialize in building
+                                            mobile-first solutions optimized for user experience. From wireframe to app
+                                            store — we handle it all.</p>
+                                    </div>
+
+                                    <div class="road__item-img">
+                                        <img src="@img/road/mobile.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="road__item">
+                                <div class="container road__item-wrapper">
+                                    <div class="road__item-content">
+                                        <div class="road__item-subtitle">
+                                            <img id="point2" src="@img/road/subtitle-img.svg" alt="">
+                                            <p>Smart & scalable platforms</p>
+                                        </div>
+                                        <h3 class="road__item-title"><span class="title-mark">Modern web
+                                                applications</span> that grow with you</h3>
+                                        <p class="road__item-text">We develop scalable and robust web applications
+                                            tailored for business growth. Our platforms adapt to your needs and
+                                            integrate seamlessly.</p>
+                                    </div>
+
+                                    <div class="road__item-img">
+                                        <img src="@img/road/web.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="road__item">
+                                <div class="container road__item-wrapper">
+                                    <div class="road__item-content">
+                                        <div class="road__item-subtitle">
+                                            <img id="point3" src="@img/road/subtitle-img.svg" alt="">
+                                            <p>Immersive innovation</p>
+                                        </div>
+                                        <h3 class="road__item-title"><span class="title-mark">AR/VR solutions</span> for
+                                            the future</h3>
+                                        <p class="road__item-text">From interactive learning tools to next-gen marketing
+                                            experiences — our AR/VR technologies redefine user engagement in the digital
+                                            space.</p>
+                                    </div>
+
+                                    <div class="road__item-img">
+                                        <img src="@img/road/vr.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="subscribe circle">
+                <div class="subscribe__container container">
+                    <div class="subscribe__item">
+                        <h5 class="subscribe__item-title">Have a question or project in mind?</h5>
+
+                        <p class="subscribe__item-text">Let’s talk! Our team is ready to explore how we can support your next digital idea — whether it’s a quick MVP or a full-scale app.</p>
+
+                        <a class="subscribe__item-btn blue-button" href="#" >Contact Us</a>
+                    </div>
+
+                    <div class="subscribe__item">
+                        <h5 class="subscribe__item-title">Stay in the loop with our latest updates</h5>
+
+                        <p class="subscribe__item-text">Get product announcements, tech insights, and industry trends delivered straight to your inbox. No spam — just value.</p>
+
+                        <a class="subscribe__item-btn white-button" href="#">Subscribe</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="partners circle">
+                <div class="partners__container container">
+                    <h2 class="partners__title">Our partners</h2>
+
+                    <div class="partners__block">
+                        <img src="@img/partners/spotify.svg" alt="">
+                        <img src="@img/partners/dribble.svg" alt="">
+                        <img src="@img/partners/slack.svg" alt="">
+                        <img src="@img/partners/uber.svg" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <section class="email">
+                <div class="container">
+                    <div class="email__wrapper">
+                        <h2 class="email__title">Have an idea? Let’s talk.Leave your email and we’ll reach out within 24 hours</h2>
+                        <form action="#">
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit">subscribe</button>
+                        </form>
                     </div>
                 </div>
             </section>
 
         </main>
-
 
         @@include('./blocks/footer.html')
     </div>

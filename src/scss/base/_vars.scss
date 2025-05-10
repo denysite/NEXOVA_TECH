@@ -19,6 +19,14 @@
     @return string.unquote("clamp(#{$min}, #{$preferred}, #{$max})");
 }
 
+@function minScss($min, $max) {
+    @return string.unquote("min(#{$min}, #{$max})");
+}
+
+@function maxScss($min, $max) {
+    @return string.unquote("max(#{$min}, #{$max})");
+}
+
 // VARS
 
 $minWidth: 320;
@@ -28,7 +36,7 @@ $containerWidth: $maxWidthContainer + 30;
 
 :root {
     --fontFamily: 'Poppins', sans-serif;
-    --fontSize: #{rem(16)};
+    --fontSize: #{clampScss(9px, rem(16), 30px)};
 
     --minWidth: #{$minWidth}px;
     --maxWidth: #{$maxWidth}px;
@@ -38,6 +46,10 @@ $containerWidth: $maxWidthContainer + 30;
     --mainColor: #000;
     --highlightColor: #1090CB;
     --blueHover: #0e82b7;
+
+    @media(max-width: 470px) {
+        --fontSize: #{clampScss(9px, rem(14), 24px)};
+    }
 }
 
 // MIXINS
@@ -45,7 +57,6 @@ $containerWidth: $maxWidthContainer + 30;
 @mixin text-hover($hoverColor: #fff) {
     @media (hover: hover) {
         transition: all .3s ease;
-        position: relative;
 
         &::after {
             content: '';

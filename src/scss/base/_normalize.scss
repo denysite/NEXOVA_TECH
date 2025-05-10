@@ -13,14 +13,14 @@
 html,
 body {
 	height: 100%;
-	min-width: var(--minWidth);
+	// min-width: var(--minWidth);
 	scroll-behavior: smooth;
 }
 
 body {
 	color: var(--mainColor);
 	font-weight: 400;
-	line-height: 1;
+	line-height: 1.75;
 	font-family: var(--fontFamily);
 	font-size: var(--fontSize);
 	//text-rendering: optimizeLegibility;
@@ -37,6 +37,10 @@ button,
 textarea {
 	font-family: var(--fontFamily);
 	font-size: inherit;
+
+	&:focus-visible {
+		outline-color: var(--highlightColor);
+	}
 }
 
 button {

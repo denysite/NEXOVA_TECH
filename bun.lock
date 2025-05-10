@@ -3,6 +3,9 @@
   "workspaces": {
     "": {
       "name": "gulp",
+      "dependencies": {
+        "gsap": "^3.13.0",
+      },
       "devDependencies": {
         "@types/bun": "latest",
         "browser-sync": "^3.0.4",
@@ -690,6 +693,8 @@
     "group-css-media-queries": ["group-css-media-queries@1.4.1", "", { "dependencies": { "css-parse": "^2.0.0", "css-stringify": "^2.0.0" }, "bin": { "group-css-media-queries": "./bin/group-css-media-queries" } }, "sha512-i7GUeETF5bLjrVZCrz1ZwtJdfi3XnPe6UWgTufKDuetBi4V1HDfvY1La5DAqeJzBqOz6DXipRqtK5UYeYzCNpA=="],
 
     "growly": ["growly@1.3.0", "", {}, "sha512-+xGQY0YyAWCnqy7Cd++hc2JqMYzlm0dG30Jd0beaA64sROr8C4nt8Yc9V5Ro3avlSUDTN0ulqP/VBKi1/lLygw=="],
+
+    "gsap": ["gsap@3.13.0", "", {}, "sha512-QL7MJ2WMjm1PHWsoFrAQH/J8wUeqZvMtHO58qdekHpCfhvhSL4gSiz6vJf5EeMP0LOn3ZCprL2ki/gjED8ghVw=="],
 
     "gulp": ["gulp@5.0.0", "", { "dependencies": { "glob-watcher": "^6.0.0", "gulp-cli": "^3.0.0", "undertaker": "^2.0.0", "vinyl-fs": "^4.0.0" }, "bin": { "gulp": "bin/gulp.js" } }, "sha512-S8Z8066SSileaYw1S2N1I64IUc/myI2bqe2ihOBzO6+nKpvNSg7ZcWJt/AwF8LC/NVN+/QZ560Cb/5OPsyhkhg=="],
 

@@ -28,21 +28,40 @@
 .white-button {
     color: var(--highlightColor);
     background-color: #fff;
-    border-radius: rem(10);
-    border: rem(1) solid var(--highlightColor);
+    border-radius: 10px;
+    border: 1px solid var(--highlightColor);
     max-width: rem(193);
 
     transition: all .4s ease;
 
-    padding: rem(9) 0;
-    @include adaptiveValue("padding-left", 18, 10);
-    @include adaptiveValue("padding-right", 18, 10);
+    padding: clampScss(5px, rem(10), 15px) 27px;
+
+    @media(max-width: 470px) {
+        padding: clampScss(5px, rem(10), 15px) 10px;
+    }
 
     @media (hover: hover) {
         &:hover {
             color: #fff;
             background-color: var(--highlightColor);
             box-shadow: var(--highlightColor) 0 rem(5) rem(20);
+        }
+    }
+}
+
+.circle {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 35vw;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        z-index: -1;
+
+        @media(max-width: em(800)) {
+            display: none;
         }
     }
 }
